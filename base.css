@@ -9,10 +9,10 @@ html {
 }
 
 body {
-  background-color: #e8e8e8;
+  background-color: #f8f8f8;
   color: #333;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 200;
+  font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -35,14 +35,51 @@ body {
 }
 
 h1 {
-  font-size: 4em;
+	padding: 0 1rem;
+	font-weight: 900;
+  font-size: 4rem;
   line-height: 1.0;
   margin: 15px auto;
 }
 
+.logo,
+.cmyk-logo {
+	position: relative;
+}
+
+.logo::before {
+	content: '';
+  background-color: gold;
+  top: 25px;
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  z-index: -1;
+  transform: rotate(-8deg);
+  left: 0;
+}
+
+/*
+magenta #EC2A8F
+cyan: #02AEEE
+yellow: #FFF216
+*/
+a {
+	color: #333;
+	text-decoration: none;
+}
+
 p {
-  font-size: 1.3em;
-  line-height: 1.8;
+  font-size: 1.3rem;
+  line-height: 1.4;
+	max-width: 400px;
+	margin: 10px 0;
+	text-align: center;
+	width: 90%;
+}
+
+sup {
+	font-size: 0.75rem;
 }
 
 .dark {
@@ -57,7 +94,13 @@ p {
   color: #FF0700;
 }
 
-a {
-  text-decoration: none;
-  color: #FF0700;
+p a {
+	box-shadow: inset 0 -4px 0 gold;
+	padding: 0 2px;
+	position: relative;
+}
+
+p a:hover {
+	background-color: gold;
+	transition: 0.5s;
 }
