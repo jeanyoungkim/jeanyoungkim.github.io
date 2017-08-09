@@ -26,12 +26,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.full-bleed {
 	position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-	text-align: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 h1 {
@@ -42,9 +44,25 @@ h1 {
   margin: 15px auto;
 }
 
-.logo,
-.cmyk-logo {
+.logo {
 	position: relative;
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(-8deg);
+	}
+	50% {
+		transform: rotate(8deg);
+	}
+	100% {
+		transform: rotate(-8deg);
+	}
+}
+
+.logo:hover::before {
+	-webkit-animation: shake 0.3s;
+	        animation: shake 0.3s;
 }
 
 .logo::before {
@@ -59,11 +77,6 @@ h1 {
   left: 0;
 }
 
-/*
-magenta #EC2A8F
-cyan: #02AEEE
-yellow: #FFF216
-*/
 a {
 	color: #333;
 	text-decoration: none;
