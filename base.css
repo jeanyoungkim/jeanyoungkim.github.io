@@ -86,25 +86,13 @@ p {
   font-size: 1.3rem;
   line-height: 1.4;
 	max-width: 400px;
-	margin: 10px 0;
+	margin: 10px auto;
 	text-align: center;
 	width: 90%;
 }
 
 sup {
 	font-size: 0.75rem;
-}
-
-.dark {
-  color: #333;
-}
-
-.teal {
-  color: #a5dbd9;
-}
-
-.coral {
-  color: #FF0700;
 }
 
 p a {
@@ -116,4 +104,8 @@ p a {
 p a:hover {
 	background-color: gold;
 	transition: 0.5s;
+}
+
+img {
+	max-width: 90%;
 }
