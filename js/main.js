@@ -1,14 +1,4 @@
 var projects = document.querySelectorAll('section');
-var sectionCutoffs = [];
-
-function partitionPage() {
-	var cumulativeHeight = 0;
-	projects.forEach(function(project, index) {
-		var currentProjectHeight = project.scrollHeight;
-		sectionCutoffs.push(currentProjectHeight + cumulativeHeight);
-		cumulativeHeight += currentProjectHeight;
-	});
-}
 
 function addActiveState(dot) {
 	var activeDot = document.querySelector('.navItem.active');
@@ -52,7 +42,6 @@ function initialize() {
 		renderNav();
 		getActiveSection();
 		setUpScrollListener();
-		partitionPage();
 	}
 }
 
