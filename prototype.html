@@ -14,19 +14,21 @@
 			<h3>Projects</h3>
 		</header>
 		<main>
-			<section>
-				<h2>> Spelling Bee</h2>
-				<p class='tags'>Product Design, Visual Design, Web Development</p>
+			<section id="spelling-bee">
+				<div class="section-header">
+					<h2>Spelling Bee</h2>
+					<p class='tags'>Product Design, Visual Design, Web Development</p>
+				</div>
 				<p>The NYT Games Expansion Team is currently exploring new audiences and opportunities by rapidly prototyping and user testing game concepts.</p>
 				<p>As part of that effort, I recently spent two weeks designing and developing a prototype of Spelling Bee that was tested on the mobile web homepage of The New York Times.</p>
-				<img src="./projects/assets/spelling-bee.png" alt="Spelling Bee">
+				<img src="./projects/assets/bee/spelling-bee.png" alt="Spelling Bee">
 				<h3>Background</h3>
 				<p>Spelling Bee is one of the variety puzzles found in The New York Times Magazine. Notoriously difficult, it's usually played over multiple sessions - a lot of players we interviewed described their routine of leaving the magazine out on their coffee table so that they could come back to it throughout the day.</p>
 				<p>Our challenge was to see if we could recreate this analog experience in a digital game.</p>
 				<h3>Process</h3>
 				<p>When it comes to process, the Expansion team values speed above all else - we aim to validate or discard ideas as quickly as possible by building MVPs and testing them within a 2-week timeframe.</p>
 				<p>After an initial kickoff meeting with our game designer and product manager, I designed and coded a prototype in three days and did a round of internal user testing to answer some gameplay questions.</p>
-				<img width="700px" src="./projects/assets/bee-sketch.png" alt="Spelling Bee Sketch">
+				<img width="700px" src="./projects/assets/bee/bee-sketch.png" alt="Spelling Bee Sketch">
 				<figcaption>Sketching a CSS Grid solution for the board layout</figcaption>
 				<p>The feedback from the user testing was pretty unanimous - the game, an exact interpretation of the original rules of Spelling Bee, was too difficult.</p>
 				<p>Taking that feedback into account, we made the rules and scoring a little less rigid and I built a second iteration of the prototype.</p>
@@ -35,15 +37,17 @@
 				<p>We're currently figuring out next steps for our beloved Bee, but for now, please enjoy some of my personal favorite feedback emails:</p>
 				<blockquote>I love the spelling bee game! My best friend and I play every night and text each other our scores through the evening and then compare our word lists. It's really great fun. Please keep it around.</blockquote>
 				<blockquote>
-					Very fun! I got my 94 year old dad into it. He's a New York Times cross world puzzler from way back!
+					Very fun! I got my 94 year old dad into it. He's a New York Times crossword puzzler from way back!
 				</blockquote>
 				<blockquote>
 					I am completely hooked on this game!! My fiance and i are long distance for the summer and sending our spelling bee answers to one another quickly became a very loving ritual for us! We can't wait until the game is back!! Thanks!
 				</blockquote>
 			</section>
-			<section>
-				<h2>> Design Sprint: Daily Flow</h2>
-				<p class='tags'>Product Design, Visual Design</p>
+			<section id="daily-flow">
+				<div class="section-header">
+					<h2>Design Sprint: Daily Flow</h2>
+					<p class='tags'>Product Design, Visual Design</p>
+				</div>
 				<p>Last October, a subset of the Games team had a weeklong product ideation session inspired by <a target="_blank" href="http://www.gv.com/sprint/">Google Ventures' Design Sprint</a>. I acted as the technology representative in a 7-person group that spanned product & project management, design, and editorial.</p>
 				<h3>Setting a Goal</h3>
 				<p>The first step of our process was actually to reset our goal. Our pre-ordained goal was to answer the question "how can we help Crosswords users find more value in our product?"</p>
@@ -65,10 +69,46 @@
 				<p>We tested our prototype on a number of different people who play the Mini puzzle and found that they enjoyed the mini games as a standalone experience and were particularly delighted when their pre-populated Crossword was revealed.</p>
 				<p>The next steps for this project are to create a digital version to test habituation and figure out if this can be used as an onboarding tool. Stay tuned!</p>
 			</section>
-			<section>
-				<h2>> Matter Ventures</h2>
-				<p class='tags'>Product Design</p>
-				<p>This is a placeholder lalala<p>
+			<section id="matter-ventures">
+				<div class="section-header">
+					<h2>Matter Ventures</h2>
+					<p class='tags'>Product Design, Visual Design</p>
+				</div>
+				<p>In 2016, The New York Times partnered with <a target="_blank" href="http://matter.vc">Matter.vc</a> and participated in their five month design thinking program. Two colleagues and I represented NYT and worked alongside the startups in Matter's program to design a new product for The Times.</p>
+				<p>The program culminated in a Demo Day where we pitched our product to an audience of internal stakeholders and VCs at Google NY.</p>
+				<h3>Understanding Our Audience</h3>
+				<p>There are several things that we know about casual NYT readers: they do more skimming than reading, they don't seem to know their way around our content, and they rarely come back to our site.</p>
+				<!-- <p>While interviewing some of these casual Times readers, we met a woman named Stephanie who told us that she spends too much time scrolling through social media just to kill time.</p> -->
+				<p>As an organization, we have a ton of data about our readers' habits, which my colleagues and I initially wanted to use as a starting point for our project. The more we looked at the data, however, the more we realized that we know a lot about what our readers are doing, but not as much about why they're doing it.</p>
+				<p>With this in mind, we conducted some user interviews and met Stephanie, a young professional and casual Times reader. During our interview, Stephanie told us that she spends "too much time" on social media. We asked her to elaborate and she said that whenever she has a small chunk of free time - while waiting for the train or standing in line for coffee - she checks various social media apps simply to kill time but doesn't really get anything out of it.</p>
+				<h3>Our Challenge</h3>
+				<p>Stephanie's comment about killing time really struck us, so we asked ourselves: <i>How can we help people spend bits of free time in a fulfilling way?</i></p>
+				<p>We think that fulfillment generally comes from finding something that's right for you, which naturally led us to examine how our organization handles personalization.</p>
+				<img src="./projects/assets/matter/personalization.png" alt="Personalization">
+				<figcaption>Algorithmic vs self-selected personalization</figcaption>
+				<p>The Times currently has two primary approaches to personalization: <br/>
+					<ol>
+						<li>Algorithmic recommendations based on what you've already read </li>
+						<li>Highly-curated, topic-based sections (Politics, Science, Style, etc)</li>
+					</ol>
+				</p>
+				<p>There are some downsides to these two approaches: with algorithmic personalization, you eventaully get reduced down to a few meta tags and your recommendations become predictable (spoilers: more real estate listings!). With self-selected, the onus is on you to figure out what you like and the amount of effort it takes to get a variety of content increases.</p>
+				<p>Our mission, then, was to find the sweet spot between those two types of personalization where a reader can tell us what they want and feel confident that we'll deliver exactly that.</p>
+				<h3>What are you in the mood for?</h3>
+				<p>The solution that designed is a series of mood/goal based prompts - things like "Make me feel better about the world" and "Give me something to talk about over dinner" - that lead to curated collections of content.</p>
+				<img src="./projects/assets/matter/prompts.png" alt="Personalization">
+				<figcaption>Mood based prompts and collections</figcaption>
+				<p>There are three important characteristics of these collections:</p>
+				<ol>
+					<li>Curated: our journalists and editors are able to measure the emotional impact of a story in a way that an algorithm simply can't.</li>
+					<li>Finite: each collection contains 4 to 6 pieces of content - we want this to feel like something that you can accomplish during little bits of free time.</li>
+					<li>A Discovery Tool: The Times has so much rich, evergreen content that a new reader may never encounter solely because of timing. Our goal with this product is surprise readers with something different and deliver interesting, rather than timely, content.</li>
+				</ol>
+				<h3>Bringing it all together</h3>
+				<img src="./projects/assets/matter/complete.png" alt="Final Product">
+				<figcaption>The final product</figcaption>
+				<p>We've already run some A/B tests in a couple of newsletters to test engagement around these mood based prompts and have been encouraged by the results. The final step of this journey is to bring the collections together in one place. Our hope is that this can become a destination for people like Stephanie where they can reliably find content that's full of surprises but feels just right.</p>
+				<!-- <p>Let's look at personalization as a spectrum. On one end we have algorithmic personalization, where you're reduced to a number of meta tags - you read a couple of Real Estate stories and suddenly all you see are real estate listings. On the other end we have self-selected personalization - you have to self identify as a politics, science, opinion, etc fan and we give you an entire section of content only related to that topic.</p> -->
 			</section>
 		</main>
   </body>
