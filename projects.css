@@ -134,6 +134,6 @@ section ol {
 	section h3,
 	section blockquote,
 	section ol {
-		width: 85%;
+		width: 100%;
 	}
 }
