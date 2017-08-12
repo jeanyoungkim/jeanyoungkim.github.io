@@ -5,11 +5,9 @@ function partitionPage() {
 	var cumulativeHeight = 0;
 	projects.forEach(function(project, index) {
 		var currentProjectHeight = project.scrollHeight;
-		console.log(project.id, currentProjectHeight);
 		sectionCutoffs.push(currentProjectHeight + cumulativeHeight);
 		cumulativeHeight += currentProjectHeight;
 	});
-	console.log('cutoffs', sectionCutoffs);
 }
 
 function addActiveState(dot) {
@@ -34,20 +32,14 @@ function renderNav() {
 }
 
 function getActiveSection() {
-	var dots = document.querySelectorAll('.navItem');
-	var activeDot = document.querySelector('.navItem.active');
-	var scrollDepth = window.pageYOffset;
 	var activeSectionIndex;
 
-	sectionCutoffs.forEach(function(cutoff, index) {
-		var prevCutoff = index > 0 ? sectionCutoffs[index - 1] : 0;
-		var isBetweenCutoffs = scrollDepth > prevCutoff && scrollDepth < cutoff;
-		var isLast = index === (sectionCutoffs.length - 1) && scrollDepth > cutoff;
-		if (isBetweenCutoffs || isLast) {
-			activeSectionIndex = index;
-			addActiveState(dots[activeSectionIndex]);
-		}
+	projects.forEach(function(project, index) {
+		if (verge.inViewport(project)) visibleSectionIndex = index;
 	});
+
+	var dots = document.querySelectorAll('.navItem');
+	addActiveState(dots[visibleSectionIndex])
 }
 
 function setUpScrollListener() {
@@ -57,10 +49,10 @@ function setUpScrollListener() {
 
 function initialize() {
 	if (window.innerWidth > 700) {
+		renderNav();
 		getActiveSection();
 		setUpScrollListener();
 		partitionPage();
-		renderNav();
 	}
 }
 
