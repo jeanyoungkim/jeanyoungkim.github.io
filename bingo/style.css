@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bingo-card {
+  background-color: tomato;
+  padding: 1rem 2rem 2rem 2rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.header {
+  font-size: 4rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 6rem);
+}
+
+.board {
+  background-color: white;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 6rem);
+}
+
+.tile {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.letter,
+.tile {
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
