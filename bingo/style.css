@@ -7,6 +7,7 @@ body {
 
 .bingo-card {
   background-color: tomato;
+  border-radius: 3px;
   padding: 1rem 2rem 2rem 2rem;
   width: 90%;
   max-width: 500px;
