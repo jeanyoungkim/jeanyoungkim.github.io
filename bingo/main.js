@@ -12,11 +12,9 @@ const columnInfo = [
   { label: "O", min: 61, max: 75 }
 ];
 
-// The columns are labeled "B" (numbers 1–15), "I" (numbers 16–30), "N" (numbers 31–45), "G" (numbers 46–60), and "O" (numbers 61–75).[7]
-
 const renderBoard = () => {
   indexArray.forEach(i => {
-    const tileContent = `<p data-index="${i}" class="tile-contents"></p></div>`;
+    const tileContent = `<input class="tile-input" type="checkbox" id="${i}" name="" value=""><label for="" class="tile-contents"></label>`;
     const tile = document.createElement("div");
     tile.classList.add("tile");
     if (i === freeIndex) tile.classList.add("free");
@@ -32,11 +30,15 @@ const getRandomNumberBetween = (min, max) =>
 
 const generateNumbers = () => {
   const tiles = document.querySelectorAll(".tile-contents");
+  const tileInputs = document.querySelectorAll(".tile-input");
   indexArray.forEach(i => {
     const columnNumber = i % 5;
     const { min, max } = columnInfo[columnNumber];
     const tileContent =
       i === freeIndex ? "free" : getRandomNumberBetween(min, max);
+    tileInputs[i].name = tileContent;
+    tileInputs[i].value = tileContent;
+    tiles[i].htmlFor = tileContent;
     tiles[i].innerText = tileContent;
   });
 };
