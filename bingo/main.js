@@ -14,7 +14,7 @@ const columnInfo = [
 
 const renderBoard = () => {
   indexArray.forEach(i => {
-    const tileContent = `<input class="tile-input" type="checkbox" id="${i}" name="" value=""><label for="" class="tile-contents"></label>`;
+    const tileContent = `<input class="tile-input" type="checkbox" id="${i}" name="" value=""><span class="checkbox"></span><label for="" class="tile-contents"></label>`;
     const tile = document.createElement("div");
     tile.classList.add("tile");
     if (i === freeIndex) tile.classList.add("free");
