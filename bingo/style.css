@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .bingo-card {
@@ -45,7 +45,7 @@ body {
 }
 
 .free {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
@@ -75,6 +75,10 @@ body {
 @media (min-width: 768px) {
   .header {
     font-size: 4rem;
+  }
+
+  .free {
+    font-size: 1.25rem;
   }
 
   .bingo-card {
