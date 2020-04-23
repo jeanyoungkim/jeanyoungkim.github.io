@@ -68,12 +68,21 @@ const addEventListeners = () => {
       if (changedTile.checked) {
         selectedIndices.push(id);
       } else {
-        console.log("nuuu remove", selectedIndices, id);
         selectedIndices = selectedIndices.filter((i) => i !== id);
       }
-      console.log(selectedIndices);
+      console.log("hello?", selectedIndices.length);
+      if (selectedIndices.length >= 5) {
+        checkForBingo();
+      }
     });
   });
+};
+
+const checkForBingo = () => {
+  winningCombinations.forEach((combo) => {
+    console.log(combo.filter((num) => selectedIndices.includes(num)));
+  });
+  console.log("bingo??");
 };
 
 const getRandomNumberBetween = (min, max) =>
@@ -88,14 +97,15 @@ const generateNumbers = () => {
     const { min, max } = columnInfo[columnNumber];
     const randomNum = getRandomNumberBetween(min, max);
     const name = numNameMap[randomNum];
-    const tileContent = i === freeIndex ? "free" : name || randomNum;
+    const jo = `<img src='./assets/jo.png' alt="jo" />`;
+    const tileContent = i === freeIndex ? jo : name || randomNum;
     if (name) {
       tiles[i].classList.add("responsive-font");
     }
     tileInputs[i].name = tileContent;
     tileInputs[i].value = tileContent;
     tileContents[i].htmlFor = tileContent;
-    tileContents[i].innerText = tileContent;
+    tileContents[i].innerHTML = tileContent;
   });
 };
 
