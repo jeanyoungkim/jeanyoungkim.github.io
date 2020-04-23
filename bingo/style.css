@@ -6,7 +6,7 @@ body {
 }
 
 .bingo-card {
-  background-color: tomato;
+  background-color: MediumAquaMarine;
   border-radius: 3px;
   padding: 1rem;
   width: 90%;
@@ -42,6 +42,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.highlight {
+  -webkit-text-stroke: 3px #333;
+  color: white;
 }
 
 .free {
