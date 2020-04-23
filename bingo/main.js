@@ -12,6 +12,25 @@ const columnInfo = [
   { label: "O", min: 61, max: 75 },
 ];
 
+const numNameMap = {
+  1: "Jan",
+  5: "Bella",
+  8: "Livy",
+  12: "John",
+  16: "Paula",
+  23: "Molly",
+  28: "Conor",
+  31: "Stacy",
+  36: "Abby",
+  40: "Rory",
+  46: "Esme",
+  50: "Barrett",
+  55: "Liz",
+  61: "Juniper",
+  70: "Ryan",
+  75: "Tess",
+};
+
 const renderBoard = () => {
   indexArray.forEach((i) => {
     const tileMarkup = `<input class="tile-input" type="checkbox" id="${i}" name="" value=""><span class="checkbox"></span><label for="" class="tile-contents"></label>`;
@@ -23,24 +42,33 @@ const renderBoard = () => {
   });
 };
 
-renderBoard();
-
 const getRandomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 const generateNumbers = () => {
-  const tiles = document.querySelectorAll(".tile-contents");
+  const tiles = document.querySelectorAll(".tile");
+  const tileContents = document.querySelectorAll(".tile-contents");
   const tileInputs = document.querySelectorAll(".tile-input");
+
   indexArray.forEach((i) => {
     const columnNumber = i % 5;
     const { min, max } = columnInfo[columnNumber];
-    const tileContent =
-      i === freeIndex ? "free" : getRandomNumberBetween(min, max);
+    const randomNum = getRandomNumberBetween(min, max);
+    const name = numNameMap[randomNum];
+    const tileContent = i === freeIndex ? "free" : name || randomNum;
+    if (name) {
+      tiles[i].classList.add("responsive-font");
+    }
     tileInputs[i].name = tileContent;
     tileInputs[i].value = tileContent;
-    tiles[i].htmlFor = tileContent;
-    tiles[i].innerText = tileContent;
+    tileContents[i].htmlFor = tileContent;
+    tileContents[i].innerText = tileContent;
   });
 };
 
-generateNumbers();
+const init = () => {
+  renderBoard();
+  generateNumbers();
+};
+
+init();
