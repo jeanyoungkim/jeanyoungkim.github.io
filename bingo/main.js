@@ -9,16 +9,16 @@ const columnInfo = [
   { label: "I", min: 16, max: 30 },
   { label: "N", min: 31, max: 45 },
   { label: "G", min: 46, max: 60 },
-  { label: "O", min: 61, max: 75 }
+  { label: "O", min: 61, max: 75 },
 ];
 
 const renderBoard = () => {
-  indexArray.forEach(i => {
-    const tileContent = `<input class="tile-input" type="checkbox" id="${i}" name="" value=""><span class="checkbox"></span><label for="" class="tile-contents"></label>`;
+  indexArray.forEach((i) => {
+    const tileMarkup = `<input class="tile-input" type="checkbox" id="${i}" name="" value=""><span class="checkbox"></span><label for="" class="tile-contents"></label>`;
     const tile = document.createElement("div");
     tile.classList.add("tile");
     if (i === freeIndex) tile.classList.add("free");
-    tile.innerHTML = tileContent;
+    tile.innerHTML = tileMarkup;
     board.appendChild(tile);
   });
 };
@@ -31,7 +31,7 @@ const getRandomNumberBetween = (min, max) =>
 const generateNumbers = () => {
   const tiles = document.querySelectorAll(".tile-contents");
   const tileInputs = document.querySelectorAll(".tile-input");
-  indexArray.forEach(i => {
+  indexArray.forEach((i) => {
     const columnNumber = i % 5;
     const { min, max } = columnInfo[columnNumber];
     const tileContent =
