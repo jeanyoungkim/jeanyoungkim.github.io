@@ -94,17 +94,6 @@ body {
   text-transform: uppercase;
 }
 
-.free input[type="checkbox"]:checked + .checkbox::after {
-  content: "";
-  background: url("./assets/hat2.png") no-repeat;
-  background-size: 45px 45px;
-  height: 45px;
-  width: 45px;
-  left: 3px;
-  top: -33px;
-  position: absolute;
-}
-
 .responsive-font {
   font-size: 100%;
 }
@@ -132,6 +121,17 @@ body {
   border-radius: 50%;
 }
 
+.free input[type="checkbox"]:checked + .checkbox::after {
+  content: "";
+  background: url("./assets/hat2.png") no-repeat;
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+  left: -20%;
+  top: -75%;
+  position: absolute;
+}
+
 @media (min-width: 768px) {
   body {
     height: 100vh;
@@ -156,5 +156,10 @@ body {
   .checkbox {
     height: 5rem;
     width: 5rem;
+  }
+
+  .free input[type="checkbox"]:checked + .checkbox::after {
+    left: 3px;
+    top: -33px;
   }
 }
