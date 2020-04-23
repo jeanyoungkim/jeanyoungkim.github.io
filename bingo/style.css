@@ -67,7 +67,7 @@ body {
 }
 
 .tile-input:checked + .checkbox {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(102, 221, 170, 0.6);
 }
 
 .checkbox {
