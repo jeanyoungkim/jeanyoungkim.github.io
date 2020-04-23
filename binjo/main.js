@@ -70,19 +70,30 @@ const addEventListeners = () => {
       } else {
         selectedIndices = selectedIndices.filter((i) => i !== id);
       }
-      console.log("hello?", selectedIndices.length);
-      if (selectedIndices.length >= 5) {
-        checkForBingo();
-      }
+
+      checkForBingo();
     });
   });
 };
 
 const checkForBingo = () => {
-  winningCombinations.forEach((combo) => {
-    console.log(combo.filter((num) => selectedIndices.includes(num)));
+  const header = document.querySelector(".header");
+  let hasBingo = false;
+
+  winningCombinations.some((combo, i) => {
+    const selectedComboVals = combo.filter((num) =>
+      selectedIndices.includes(num)
+    );
+
+    hasBingo = combo.length === selectedComboVals.length;
+    return hasBingo;
   });
-  console.log("bingo??");
+
+  if (hasBingo) {
+    header.classList.add("celebrate");
+  } else {
+    header.classList.remove("celebrate");
+  }
 };
 
 const getRandomNumberBetween = (min, max) =>
