@@ -6,7 +6,7 @@ body {
 }
 
 .bingo-card {
-  background-color: tomato;
+  background-color: MediumAquaMarine;
   border-radius: 3px;
   padding: 1rem;
   width: 90%;
@@ -30,9 +30,13 @@ body {
 }
 
 .tile {
-  font-size: 1.75rem;
+  font-size: 100%;
   border-top: 2px solid black;
   border-right: 2px solid black;
+}
+
+.tile:not(.responsive-font) {
+  font-size: 1.75rem;
 }
 
 .letter,
@@ -44,9 +48,18 @@ body {
   align-items: center;
 }
 
-.free {
+.highlight {
+  -webkit-text-stroke: 3px #333;
+  color: white;
+}
+
+.tile.free {
   font-size: 1rem;
   text-transform: uppercase;
+}
+
+.responsive-font {
+  font-size: 100%;
 }
 
 .tile-input {
@@ -62,7 +75,7 @@ body {
 }
 
 .tile-input:checked + .checkbox {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(102, 221, 170, 0.6);
 }
 
 .checkbox {
