@@ -3,6 +3,7 @@ const numTiles = 25;
 const numColumns = 5;
 const indexArray = [...Array(numTiles).keys()];
 const freeIndex = 12;
+let numsInBoard = [];
 let selectedIndices = [];
 let tiles;
 
@@ -99,6 +100,13 @@ const checkForBingo = () => {
 const getRandomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
+const getUniqueRandomNumberBetween = (min, max) => {
+  const num = getRandomNumberBetween(min, max);
+  return numsInBoard.includes(num)
+    ? getUniqueRandomNumberBetween(min, max)
+    : num;
+};
+
 const generateNumbers = () => {
   const tileContents = document.querySelectorAll(".tile-contents");
   const tileInputs = document.querySelectorAll(".tile-input");
@@ -106,7 +114,8 @@ const generateNumbers = () => {
   indexArray.forEach((i) => {
     const columnNumber = i % 5;
     const { min, max } = columnInfo[columnNumber];
-    const randomNum = getRandomNumberBetween(min, max);
+    const randomNum = getUniqueRandomNumberBetween(min, max);
+    numsInBoard.push(randomNum);
     const name = numNameMap[randomNum];
     const jo = `<img src='./assets/jo.png' alt="jo" />`;
     const tileContent = i === freeIndex ? jo : name || randomNum;
